@@ -20,6 +20,7 @@ public class ColorMechanics : MonoBehaviour
             {ColorUtility.ToHtmlStringRGB(Color.red), availableColors.red},
             {ColorUtility.ToHtmlStringRGB(Color.yellow), availableColors.yellow},
             {ColorUtility.ToHtmlStringRGB(Color.white), availableColors.white},
+            {ColorUtility.ToHtmlStringRGB(Color.magenta), availableColors.magenta},
         };
     }
     void Start()

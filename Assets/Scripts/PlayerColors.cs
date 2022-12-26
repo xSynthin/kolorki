@@ -10,4 +10,5 @@ public class PlayerColors : ScriptableObject
     public Sprite red;
     public Sprite yellow;
     public Sprite white;
+    public Sprite magenta;
 }

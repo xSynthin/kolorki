@@ -1,13 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DetegentHover : MonoBehaviour
 {
     float time = 0;
-    void Start()
+    [SerializeField] private string sceneToLoad;
+    [SerializeField] private string currentScene;
+    private bool activated = false;
+    private void sceneSwitcher()
     {
-        
+        activated = true;
+        SceneManager.UnloadSceneAsync(currentScene);
+        SceneManager.LoadSceneAsync("PlayerScene");
+        SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
+        GManager.Instance.CallPlayerPosChange();
     }
     void Update()
     {
@@ -16,6 +24,6 @@ public class DetegentHover : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("NEXT LEVEL");
+        if (!activated) sceneSwitcher();
     }
 }
