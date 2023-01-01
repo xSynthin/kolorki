@@ -12,15 +12,15 @@ public class KeyValuePair
 }
 public class PlayerUtils : MonoBehaviour
 {
-    // Start is called before the first frame update
     public List<KeyValuePair> SceneSpawningPointList;
+    internal int points = 0;
     [SerializeField] private Dictionary<string, Transform> SceneSpawningPointDict = new Dictionary<string, Transform>();
     public Vector3 currSceneSpawnTransform = new Vector2(0, 0);
     public Scene currentScene;
     void Start()
     {
-        handlePlayerSpawn();
         GManager.Instance.PlayerPositionChange += handlePlayerSpawn;
+        handlePlayerSpawn();
     }
     private void Update()
     {
@@ -37,7 +37,9 @@ public class PlayerUtils : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            SceneManager.LoadScene("PlayerScene");
+            SceneManager.UnloadSceneAsync(currentScene.name);
+            SceneManager.UnloadSceneAsync("PlayerScene");
+            SceneManager.LoadSceneAsync("PlayerScene", LoadSceneMode.Additive);
             SceneManager.LoadSceneAsync(currentScene.name, LoadSceneMode.Additive);
             transform.position = currSceneSpawnTransform;
         }

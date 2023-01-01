@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class ColorMechanics : MonoBehaviour
 {
-    private List<string> colorList = new List<string>();
+    internal List<string> colorList = new List<string>();
     [SerializeField] private Transform interactText;
     [SerializeField] private KeyCode interactKey;
     [SerializeField] private KeyCode reverseColorKey;
     [SerializeField] private PlayerColors availableColors;
+    [SerializeField] private PlayerUtils playerUtils;
     private Dictionary<string, Sprite> playerColorChange = new Dictionary<string, Sprite>();
     private void Awake()
     {
@@ -18,7 +19,7 @@ public class ColorMechanics : MonoBehaviour
             {ColorUtility.ToHtmlStringRGB(Color.green), availableColors.green},
             {ColorUtility.ToHtmlStringRGB(Color.blue) , availableColors.blue },
             {ColorUtility.ToHtmlStringRGB(Color.red), availableColors.red},
-            {ColorUtility.ToHtmlStringRGB(Color.yellow), availableColors.yellow},
+            {"FFFF00", availableColors.yellow},
             {ColorUtility.ToHtmlStringRGB(Color.white), availableColors.white},
             {ColorUtility.ToHtmlStringRGB(Color.magenta), availableColors.magenta},
         };
@@ -44,7 +45,9 @@ public class ColorMechanics : MonoBehaviour
             {
                 if (colorList[colorList.Count -1] != ColorUtility.ToHtmlStringRGB(collision.GetComponent<SpriteRenderer>().color) && colorList.Count < 8)
                 {
+                    playerUtils.points += colorList.Count -1 > 0 ? 1*(colorList.Count-1): 1;
                     colorList.Add(ColorUtility.ToHtmlStringRGB(collision.GetComponent<SpriteRenderer>().color));
+                    UIManager.Instance.UpdatePoints(playerUtils.points);
                     collision.GetComponent<ColorChanger>().SpriteColorChange();
                     PlayerUIManger.instance.AddColorSlot(colorList[colorList.Count-2]);
                     GManager.Instance.CallColorChange(ColorUtility.ToHtmlStringRGB(collision.GetComponent<SpriteRenderer>().color));

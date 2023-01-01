@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayerUIManger : MonoBehaviour
 {
     public static PlayerUIManger instance;
-    [SerializeField] GameObject colorsPanel;
+    [SerializeField] public GameObject colorsPanel;
     [SerializeField] GameObject colorSlot;
     private void Awake()
     {
