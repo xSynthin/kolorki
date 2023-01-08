@@ -41,6 +41,7 @@ public class UIManager : MonoBehaviour
         NextSceneButton.gameObject.SetActive(false);
         EndScreenScore.gameObject.SetActive(false);
         endImage.gameObject.SetActive(false);
+        UpdatePoints(0);
     }
     public void UpdatePoints(int points)
     {
@@ -48,7 +49,7 @@ public class UIManager : MonoBehaviour
     }
     public void ShowEndLevelScreen()
     {
-        score *= (colorCount+1);
+        score += (colorCount+1);
         LevelScores.Add(score);
         NextLvlBackground.gameObject.SetActive(true);
         levelTextScore.gameObject.SetActive(true);
@@ -64,7 +65,7 @@ public class UIManager : MonoBehaviour
         float timeElapsed = 0;
         while (Time.deltaTime < lerpDuration)
         {
-            levelTextScore.text = $"Score : {Mathf.Lerp(0, score, timeElapsed/lerpDuration)}";
+            levelTextScore.text = $"Score : {Math.Round(Mathf.Lerp(0, score, timeElapsed/lerpDuration),2)}";
             timeElapsed += Time.deltaTime;
             yield return null;
         }
@@ -99,5 +100,6 @@ public class UIManager : MonoBehaviour
             SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
             GManager.Instance.CallPlayerPosChange();
         }
+        UpdatePoints(0);
     }
 }
