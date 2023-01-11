@@ -238,6 +238,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingScene: T1
+  buttonClick: {fileID: 8300000, guid: f4e7904c641ce2d4198b2f6d1162f077, type: 3}
+  UniClip: {fileID: 537535386358824941, guid: c3c26dbc6f4e47142a1478eb17b665b2, type: 3}
 --- !u!1 &697098961
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,7 +522,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit

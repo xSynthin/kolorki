@@ -832,6 +832,26 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7193300268157470024, guid: 2834c5c736114804497c484ad24d9171, type: 3}
+      propertyPath: UniClip
+      value: 
+      objectReference: {fileID: 537535386358824941, guid: c3c26dbc6f4e47142a1478eb17b665b2, type: 3}
+    - target: {fileID: 7193300268157470024, guid: 2834c5c736114804497c484ad24d9171, type: 3}
+      propertyPath: colorBack
+      value: 
+      objectReference: {fileID: 8300000, guid: 0cde126b7318d4d439bcf15b3377b57a, type: 3}
+    - target: {fileID: 7193300268157470024, guid: 2834c5c736114804497c484ad24d9171, type: 3}
+      propertyPath: loseColor
+      value: 
+      objectReference: {fileID: 8300000, guid: 0cde126b7318d4d439bcf15b3377b57a, type: 3}
+    - target: {fileID: 7193300268157470024, guid: 2834c5c736114804497c484ad24d9171, type: 3}
+      propertyPath: backToColor
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d4327de4376c11429f3d60af31b6b65, type: 3}
+    - target: {fileID: 7193300268157470024, guid: 2834c5c736114804497c484ad24d9171, type: 3}
+      propertyPath: colorPickup
+      value: 
+      objectReference: {fileID: 8300000, guid: d1303e1424169f84ca1896f298fe1cb1, type: 3}
+    - target: {fileID: 7193300268157470024, guid: 2834c5c736114804497c484ad24d9171, type: 3}
       propertyPath: playerUtils
       value: 
       objectReference: {fileID: 1094046017}
@@ -888,6 +908,14 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7193300268157470031, guid: 2834c5c736114804497c484ad24d9171, type: 3}
+      propertyPath: jump
+      value: 
+      objectReference: {fileID: 8300000, guid: 522f9b57e11cc4949a398772aa853d97, type: 3}
+    - target: {fileID: 7193300268157470031, guid: 2834c5c736114804497c484ad24d9171, type: 3}
+      propertyPath: UniClip
+      value: 
+      objectReference: {fileID: 537535386358824941, guid: c3c26dbc6f4e47142a1478eb17b665b2, type: 3}
+    - target: {fileID: 7193300268157470031, guid: 2834c5c736114804497c484ad24d9171, type: 3}
       propertyPath: jumpForce
       value: 12
       objectReference: {fileID: 0}
@@ -927,7 +955,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit

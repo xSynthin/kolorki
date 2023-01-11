@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class StartScript : MonoBehaviour
 {
     [SerializeField] string startingScene;
+    [SerializeField] private AudioClip buttonClick;
+    [SerializeField] GameObject UniClip;
     void Start()
     {
         
@@ -17,6 +19,8 @@ public class StartScript : MonoBehaviour
     }
     public void StartColors()
     {
+        GameObject clipper = Instantiate(UniClip);
+        clipper.GetComponent<UniversalClipSpeaker>().PlayCLip(buttonClick);
         SceneManager.LoadSceneAsync("PlayerScene");
         SceneManager.LoadSceneAsync(startingScene, LoadSceneMode.Additive);
         SceneManager.LoadSceneAsync("UIScene", LoadSceneMode.Additive);

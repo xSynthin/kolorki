@@ -894,6 +894,8 @@ MonoBehaviour:
   NextSceneButton: {fileID: 813015033}
   EndScreenScore: {fileID: 450376941}
   endImage: {fileID: 1321921055}
+  winSound: {fileID: 8300000, guid: 0847fad9586bebd41a9e47c4761f63f7, type: 3}
+  UniClip: {fileID: 537535386358824941, guid: c3c26dbc6f4e47142a1478eb17b665b2, type: 3}
 --- !u!1 &1739433713
 GameObject:
   m_ObjectHideFlags: 0
