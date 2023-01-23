@@ -993,14 +993,6 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4699735097635552407, guid: 2b3180c406255cb4eb853b1e2f679232, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 8.2278805
-      objectReference: {fileID: 0}
-    - target: {fileID: 4699735097635552407, guid: 2b3180c406255cb4eb853b1e2f679232, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 23.938179
-      objectReference: {fileID: 0}
-    - target: {fileID: 4699735097635552407, guid: 2b3180c406255cb4eb853b1e2f679232, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.17
       objectReference: {fileID: 0}
@@ -1094,17 +1086,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: ColorListener(BLUE) (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 1697676954289914293, guid: 2956ee8cecce8d9408afaed240f85d90, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 1697676954289914297, guid: 2956ee8cecce8d9408afaed240f85d90, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1697676954289914297, guid: 2956ee8cecce8d9408afaed240f85d90, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 22.644413
       objectReference: {fileID: 0}
     - target: {fileID: 1697676954289914297, guid: 2956ee8cecce8d9408afaed240f85d90, type: 3}
       propertyPath: m_LocalPosition.x
