@@ -40,6 +40,7 @@ public class PlayerUtils : MonoBehaviour
             SceneManager.UnloadSceneAsync(currentScene.name);
             SceneManager.UnloadSceneAsync("PlayerScene");
             SceneManager.LoadSceneAsync("PlayerScene", LoadSceneMode.Additive);
+            UIManager.Instance.UpdatePoints(0);
             SceneManager.LoadSceneAsync(currentScene.name, LoadSceneMode.Additive);
             transform.position = currSceneSpawnTransform;
         }

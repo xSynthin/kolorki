@@ -88,6 +88,7 @@ public class UIManager : MonoBehaviour
     }
     public void sceneSwitcher()
     {
+        SoundManager.instance.playNextLevelSound();
         NextLvlBackground.gameObject.SetActive(false);
         levelTextScore.gameObject.SetActive(false);
         NextSceneButton.gameObject.SetActive(false);

@@ -19,9 +19,9 @@ public class StartScript : MonoBehaviour
     }
     public void StartColors()
     {
-        GameObject clipper = Instantiate(UniClip);
-        clipper.GetComponent<UniversalClipSpeaker>().PlayCLip(buttonClick);
-        SceneManager.LoadSceneAsync("PlayerScene");
+        SoundManager.instance.playNextLevelSound();
+        SceneManager.LoadSceneAsync("PlayerScene", LoadSceneMode.Additive);
+        SceneManager.UnloadSceneAsync("StartScene");
         SceneManager.LoadSceneAsync(startingScene, LoadSceneMode.Additive);
         SceneManager.LoadSceneAsync("UIScene", LoadSceneMode.Additive);
     }
