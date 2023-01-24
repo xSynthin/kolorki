@@ -11,10 +11,6 @@ public class ColorMechanics : MonoBehaviour
     [SerializeField] private KeyCode reverseColorKey;
     [SerializeField] private PlayerColors availableColors;
     [SerializeField] private PlayerUtils playerUtils;
-    [SerializeField] private AudioClip colorPickup;
-    [SerializeField] private AudioClip loseColor;
-    [SerializeField] private AudioClip backToColor;
-    [SerializeField] GameObject UniClip;
     private Dictionary<string, Sprite> playerColorChange = new Dictionary<string, Sprite>();
     private void Awake()
     {
@@ -55,8 +51,7 @@ public class ColorMechanics : MonoBehaviour
                     collision.GetComponent<ColorChanger>().SpriteColorChange();
                     PlayerUIManger.instance.AddColorSlot(colorList[colorList.Count-2]);
                     GManager.Instance.CallColorChange(ColorUtility.ToHtmlStringRGB(collision.GetComponent<SpriteRenderer>().color));
-                    GameObject clipper = Instantiate(UniClip);
-                    clipper.GetComponent<UniversalClipSpeaker>().PlayCLip(colorPickup);
+                    SoundManager.instance.playColorPickup();
                 }
             }
         }
@@ -72,15 +67,13 @@ public class ColorMechanics : MonoBehaviour
             GManager.Instance.CallColorChange(colorList[colorList.Count - 2]);
             PlayerUIManger.instance.RemoveSlot(colorList[colorList.Count - 2]);
             colorList.RemoveAt(colorList.Count - 1);
-            print(colorList.Count);
-            GameObject clipper = Instantiate(UniClip);
             if (colorList.Count == 1)
             {
-                clipper.GetComponent<UniversalClipSpeaker>().PlayCLip(loseColor);
+                SoundManager.instance.playLoseColorSound();
             }
             else
             {
-                clipper.GetComponent<UniversalClipSpeaker>().PlayCLip(backToColor);
+                SoundManager.instance.playBackToColorSound();
             }
         }
     }

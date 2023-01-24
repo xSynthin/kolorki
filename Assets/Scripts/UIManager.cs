@@ -15,8 +15,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button NextSceneButton;
     [SerializeField] private TextMeshProUGUI EndScreenScore;
     [SerializeField] private Image endImage;
-    [SerializeField] private AudioClip winSound;
-    [SerializeField] GameObject UniClip;
     internal List<int> LevelScores =  new List<int>();
     private int score;
     private int colorCount;
@@ -60,8 +58,7 @@ public class UIManager : MonoBehaviour
         SceneManager.UnloadSceneAsync(currentScene);
         PlayerUIManger.instance.colorsPanel.SetActive(false);
         StartCoroutine(animScore());
-        GameObject clipper = Instantiate(UniClip);
-        clipper.GetComponent<UniversalClipSpeaker>().PlayCLip(winSound);
+        SoundManager.instance.playWinSound();
     }
     IEnumerator animScore()
     {
@@ -82,8 +79,7 @@ public class UIManager : MonoBehaviour
             scoreSum += v;
         EndScreenScore.gameObject.SetActive(true);
         endImage.gameObject.SetActive(true);
-        GameObject clipper = Instantiate(UniClip);
-        clipper.GetComponent<UniversalClipSpeaker>().PlayCLip(winSound);
+        SoundManager.instance.playWinSound();
         EndScreenScore.text = $"Final Score: {scoreSum}";
     }
     public void sceneSwitcher()

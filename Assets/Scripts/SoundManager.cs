@@ -8,6 +8,11 @@ public class SoundManager : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private AudioClip buttonClick;
     [SerializeField] private AudioClip resetLevelSound;
+    [SerializeField] private AudioClip jumpSound;
+    [SerializeField] private AudioClip winSound;
+    [SerializeField] private AudioClip colorPickup;
+    [SerializeField] private AudioClip colorLose;
+    [SerializeField] private AudioClip backToColor;
     [SerializeField] GameObject UniClip;
     private void Awake()
     {
@@ -27,10 +32,29 @@ public class SoundManager : MonoBehaviour
         GameObject clipper = Instantiate(UniClip);
         clipper.GetComponent<UniversalClipSpeaker>().PlayCLip(resetLevelSound);
     }
-
-    // Update is called once per frame
-    void Update()
+    public void playJumpSound()
     {
-        
+        GameObject clipper = Instantiate(UniClip);
+        clipper.GetComponent<UniversalClipSpeaker>().PlayCLip(jumpSound);
+    }
+    public void playWinSound()
+    {
+        GameObject clipper = Instantiate(UniClip);
+        clipper.GetComponent<UniversalClipSpeaker>().PlayCLip(winSound);
+    }
+    public void playBackToColorSound()
+    {
+        GameObject clipper = Instantiate(UniClip);
+        clipper.GetComponent<UniversalClipSpeaker>().PlayCLip(backToColor);
+    }
+    public void playLoseColorSound()
+    {
+        GameObject clipper = Instantiate(UniClip);
+        clipper.GetComponent<UniversalClipSpeaker>().PlayCLip(colorLose);
+    }
+    public void playColorPickup()
+    {
+        GameObject clipper = Instantiate(UniClip);
+        clipper.GetComponent<UniversalClipSpeaker>().PlayCLip(colorPickup);
     }
 }

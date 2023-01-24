@@ -14,8 +14,6 @@ public class Player : MonoBehaviour
     [SerializeField] float jumpForce;
     [SerializeField] float fallMultiplier = 2.5f;
     [SerializeField] float lowJumpMultiplier = 2f;
-    [SerializeField] AudioClip jump;
-    [SerializeField] GameObject UniClip;
     void Start()
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
@@ -35,8 +33,7 @@ public class Player : MonoBehaviour
         {
             playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, 0);
             playerRigidbody.velocity += Vector2.up * jumpForce;
-            GameObject clipper = Instantiate(UniClip);
-            clipper.GetComponent<UniversalClipSpeaker>().PlayCLip(jump);
+            SoundManager.instance.playJumpSound();
         }
         if (playerRigidbody.velocity.y < 0)
         {
