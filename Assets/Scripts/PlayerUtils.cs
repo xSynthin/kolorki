@@ -37,6 +37,7 @@ public class PlayerUtils : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
+            SoundManager.instance.playResetSound();
             SceneManager.UnloadSceneAsync(currentScene.name);
             SceneManager.UnloadSceneAsync("PlayerScene");
             SceneManager.LoadSceneAsync("PlayerScene", LoadSceneMode.Additive);
