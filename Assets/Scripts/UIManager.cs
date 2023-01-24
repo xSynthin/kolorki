@@ -23,6 +23,7 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        SceneManager.UnloadSceneAsync("StartScene");
     }
     public void fetchScoreAndColorCount(int score ,int colorCount)
     {
@@ -50,6 +51,7 @@ public class UIManager : MonoBehaviour
     public void ShowEndLevelScreen()
     {
         score += (colorCount+1);
+        Cursor.visible = true;
         LevelScores.Add(score);
         NextLvlBackground.gameObject.SetActive(true);
         levelTextScore.gameObject.SetActive(true);
@@ -74,6 +76,7 @@ public class UIManager : MonoBehaviour
     }
     public void ShowEndScreen()
     {
+        Cursor.visible = true;
         float scoreSum = 0;
         foreach (var v in LevelScores)
             scoreSum += v;
@@ -84,6 +87,7 @@ public class UIManager : MonoBehaviour
     }
     public void sceneSwitcher()
     {
+        Cursor.visible= false;
         SoundManager.instance.playNextLevelSound();
         NextLvlBackground.gameObject.SetActive(false);
         levelTextScore.gameObject.SetActive(false);
